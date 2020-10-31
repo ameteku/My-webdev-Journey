@@ -1,3 +1,7 @@
+<?php
+   include ('config/wd_connect.php');
+?>
+
 <style>
     .errors{
         background-color:brown
@@ -63,7 +67,7 @@ $errors = array('email'=>'', 'title'=>'', 'ingredients'=>'');
         <label>Pizza Title:</label>
         <input type= "text" name = "title" value=<?php echo $title?> >
         <div name= "errors" class= "red-text"><?php echo $errors['title']?></div>
-        <label>Ingrediaents(comma separated):</label>
+        <label>Ingredients(comma separated):</label>
         <input type= "text" name = "ingredients" value=<?php echo $ingredients?> >
         <div name= "errors" class= "red-text"><?php echo $errors['ingredients']?></div>
         <div class = "center">
@@ -74,12 +78,31 @@ $errors = array('email'=>'', 'title'=>'', 'ingredients'=>'');
 </section>
 
 <?php 
-
-if($erros['email']=='' && $erros['title']=='' && $erros['ingredients']=='')
+if(isset($_POST['submit']))
 {
-    header('Location: firstph.php');
+    
+    if(!array_filter($errors))
+    {
+        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        $title = mysqli_real_escape_string($conn,$_POST['title']);
+        $ingredients=mysqli_real_escape_string($conn,$_POST['ingredients']); 
+
+        //create sql
+
+        $sql = "INSERT INTO pizza(title,email,Ingredients) VALUES('$title','$email','$ingredients')";
+
+        //save to db and check
+
+        if(mysqli_query($conn,$sql)){
+            header('Location: firstph.php');
+        }
+        else{
+            echo "query error: ". mysqli_error($conn);
+        }
+        
+    }
+    else echo "There are errors in the form";
 }
-else echo "There are errors in the form";
 ?>
 
 <?php include 'template/footer.php' ?>
