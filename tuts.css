@@ -1,0 +1,90 @@
+.collage-wrapper {
+    
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: auto;
+}
+
+.first-small {
+    margin-left: 10px;
+    width: 25%;
+    height: 400px;
+    background-color: rgb(88, 36, 173);
+    display: inline-block;
+    border-radius: 5px;
+
+}
+
+.first-big {
+    width: 60%;
+    height: 400px;
+    background-color: rgb(255, 0, 200);
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.main-box {
+    height: 500px;
+    width: 100%;
+}
+
+.header {
+    float: right;
+    margin-bottom: 40%;
+}
+
+.header span {
+    margin-left: 10px;
+font-family: sans-serif;
+}
+
+.middle-section {
+    margin: auto;
+    padding-top: 10%;
+    padding-left: 40%;
+    width: 90%;
+    
+}
+
+.search-bar-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.search-bar {
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(204, 201, 201);
+}
+
+.search-bar:hover {
+    box-shadow: 2px 2px 4px grey;
+}
+
+.submit-buttons {
+    padding: 10px;
+    padding-left: 4%;
+}
+
+.submit-buttons > button {
+    height: 30px;
+    border: none;
+    background-color: rgb(248, 244, 244);
+}
+
+.submit-buttons > button:hover {
+    cursor: pointer;
+    border: 1px solid rgb(233, 229, 229);
+    box-shadow: 2px 2px 4px rgb(231, 230, 230);
+}
+
+
+
+.main-box span:hover {
+cursor: pointer;
+    text-decoration: underline;
+}
